@@ -4,7 +4,7 @@ from datetime import datetime
 import allure
 
 base_url = "http://restapi.adequateshop.com"
-random_id = datetime.now().strftime("%Y%m%d%H%M%S")
+random_id = datetime.now().strftime("%Y%m%d%H%M%S")   # Generate random ID based on current date for unique names and emails
 
 
 @pytest.fixture
@@ -33,7 +33,7 @@ def create_tourist():
     requests.delete(delete_url)
 
 
-@allure.title("Login is successful")
+@allure.title("Login with correct credentials is successful")
 def test_login_ok(login_data):
     url = base_url + "/api/AuthAccount/Login"
     response = requests.post(url, json=login_data)
@@ -41,7 +41,7 @@ def test_login_ok(login_data):
     assert response.status_code == 200
 
 
-@allure.title("Login with invalid credentials")
+@allure.title("Login with invalid credentials is unsuccessful")
 def test_login_invalid_credentials():
     url = base_url + "/api/AuthAccount/Login"
     payload = {
@@ -56,7 +56,7 @@ def test_login_invalid_credentials():
     assert response.json()["data"] is None
 
 
-@allure.title("Login with empty credentials")
+@allure.title("Login with empty credentials is unsuccessful")
 def test_login_empty():
     url = base_url + "/api/AuthAccount/Login"
     payload = {
@@ -86,7 +86,7 @@ def test_get_tourist_ok(create_tourist):
     assert response.json()["tourist_location"] == "Terra"
 
 
-@allure.title("Tourist not found")
+@allure.title("Tourist with nonexistent ID is not found")
 def test_get_nonexistent_tourist():
     tourist_id = "nonexistent_id"
     get_url = base_url + f"/api/Tourist/{tourist_id}"
