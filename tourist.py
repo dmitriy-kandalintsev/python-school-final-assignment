@@ -4,7 +4,8 @@ from datetime import datetime
 import allure
 
 base_url = "http://restapi.adequateshop.com"
-random_id = datetime.now().strftime("%Y%m%d%H%M%S")   # Generate random ID based on current date for unique names and emails
+# Generate random ID based on current date for unique names and emails
+random_id = datetime.now().strftime("%Y%m%d%H%M%S")
 
 
 @pytest.fixture
