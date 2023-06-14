@@ -1,0 +1,6 @@
+"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
+"passed","Wed Jun 14 09:35:51 GMT 2023","Wed Jun 14 09:35:52 GMT 2023","677","","tourist","","","","Login with correct credentials is successful",""
+"passed","Wed Jun 14 09:35:55 GMT 2023","Wed Jun 14 09:35:56 GMT 2023","641","","tourist","","","","Tourist with nonexistent ID is not found",""
+"passed","Wed Jun 14 09:35:52 GMT 2023","Wed Jun 14 09:35:53 GMT 2023","660","","tourist","","","","Login with empty credentials is unsuccessful",""
+"passed","Wed Jun 14 09:35:52 GMT 2023","Wed Jun 14 09:35:52 GMT 2023","679","","tourist","","","","Login with invalid credentials is unsuccessful",""
+"passed","Wed Jun 14 09:35:54 GMT 2023","Wed Jun 14 09:35:54 GMT 2023","551","","tourist","","","","Get Tourist by ID",""
